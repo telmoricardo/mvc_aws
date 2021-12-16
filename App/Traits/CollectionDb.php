@@ -2,17 +2,32 @@
 
 namespace App\Traits;
 
+use App\Classes\Paginate;
+
 trait CollectionDb
 {
+    use Paginate;
 
     protected $paginate;
     protected $busca;
     protected $binds = [];
-    protected $sql;
+    protected $pdoStatement;
+
 
     public function paginate($perpage)
     {
-        $list = $this->bindExecute();
+        $this->perpage = $perpage;
+
+        $list = $this->connection->prepare($this->sql);
+
+        $this->bindValues($list);
+
+        $this->pdoStatement = $list;
+
+        $this->sql.=$this->sqlPaginate();
+
+        return $this;
+
     }
 
     public function get()

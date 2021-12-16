@@ -4,4 +4,33 @@
 
 {% block content %}
 <h2>Estamos na página inicial</h2>
+
+<li><a href="" aria-label="Previous"> <span aria-hidden="true">&laquo;</span> </a></li>
+
+<table>
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Mensagem</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for depoimento in depoimentos %}
+        <tr>
+            <td> <a href="#">{{ depoimento.id }}</a> </td>
+            <td> {{ depoimento.nome }} </td>
+            <td> {{ depoimento.mensagem }} </td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+    <tr>
+        <td colspan="2"> {{ links | raw }} </td>
+    </tr>
+    </tfoot>
+</table>
+
 {% endblock %}
+
