@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{titulo}}</title>
+</head>
+<body>
+    <h1>Pagina de login</h1>
+
+
+    <p>{{ message('login') }}</p>
+
+    <form method="post" action="/admin/store">
+        <input type="text" name="email" placeholder="email">
+        <input type="password" name="password" placeholder="senha">
+        <input type="submit" value="logar">
+    </form>
+</body>
+</html>

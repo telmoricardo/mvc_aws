@@ -1,0 +1,17 @@
+{
+  "name": "mvc aw",
+  "type": "mvc",
+  "require": {
+    "php": ">=7.0",
+    "twig/twig": "1.16.*@dev",
+    "intervention/image": "dev-master",
+    "phpmailer/phpmailer": "dev-master"
+
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\" : "App"
+    }
+  }
+
+}
