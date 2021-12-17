@@ -8,7 +8,7 @@ use App\Classes\Request;
 use App\Classes\SendEmail;
 use App\Classes\Validator;
 use App\Controllers\ContainerController;
-use App\Models\Admin\Admin;
+use App\Models\admin\Admin;
 
 
 class ContatoController extends ContainerController

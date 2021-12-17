@@ -3,8 +3,11 @@
 namespace App\Controllers\site;
 
 
+use App\Classes\Redirect;
+use App\Classes\Validator;
 use App\Controllers\ContainerController;
-use App\Models\Site\Depoimento as depoimento;
+use App\Models\admin\Admin;
+use App\Models\site\Depoimento as depoimento;
 
 class HomeController extends ContainerController
 {
@@ -30,6 +33,25 @@ class HomeController extends ContainerController
             'links' => $depoimento->links()
         ]);
 
+    }
+
+    public function store(){
+
+        $validate = Validator::validate(function () {
+            return Validator::required('nome','mensagem')
+                ->sanitize('nome:s', 'mensagem:s');
+        });
+
+        if(Validator::failed()){
+            return Redirect::back();
+        }
+
+//        dd($validate);
+
+        $depoimento = new Depoimento();
+//        $cadastrado = $depoimento->insert($validate);
+        $cadastrado = $depoimento->update($validate, ['id' => 15]);
+        dd($cadastrado);
     }
 
 

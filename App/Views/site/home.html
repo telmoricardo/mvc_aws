@@ -32,5 +32,25 @@
     </tfoot>
 </table>
 
+<hr>
+
+<form method="post" action="/home/store" role="form">
+    <div class="form-group">
+        <label >Nome</label>
+        {{ message('nome') }}
+        <input type="text" class="form-control" name="nome" required>
+    </div>
+
+    <div class="form-group">
+        <label >Mensagem</label>
+        {{ message('mensagem') }}
+        <textarea class="form-control" rows="5" name="mensagem" ></textarea>
+    </div>
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-success">Enviar</button>
+    </div>
+</form>
+
 {% endblock %}
 

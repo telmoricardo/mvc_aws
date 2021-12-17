@@ -7,7 +7,7 @@ use App\Classes\Hash;
 use App\Classes\Login;
 use App\Classes\Redirect;
 use App\Controllers\ContainerController;
-use App\Models\Admin\Admin;
+use App\Models\admin\Admin;
 
 class AdminController extends ContainerController
 {
